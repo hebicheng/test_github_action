@@ -1,17 +1,20 @@
-name: Python Test
+name: Python application
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-    - name: checkout actions
     - uses: actions/checkout@v2
-    - name: Set up Python 3.7
+    - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
-        python-version: 3.7
-    - name: run python script
+        python-version: 3.8
+    - name: Run Python Script
       run: |
         python helloworld.py
